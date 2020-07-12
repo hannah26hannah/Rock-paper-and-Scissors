@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+.fadeOut {
+  opacity: 0;
+  pointer-events: none; }
+
+.fadeIn {
+  opacity: 1;
+  pointer-events: all; }
+
+.game {
+  height: 100vh;
+  font-family: 'Baloo Da 2', cursive;
+  background: #272944;
+  color: #b9b9b9; }
+  .game .score {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 20vh; }
+    .game .score div h2 {
+      font-size: 30px; }
+    .game .score div p {
+      text-align: center;
+      padding: 10px;
+      font-size: 25px; }
+  .game .intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    transition: opacity 1.5s ease;
+    height: 50vh; }
+    .game .intro h1 {
+      font-size: 50px; }
+    .game .intro button {
+      width: 150px;
+      height: 50px;
+      background: none;
+      border: none;
+      color: #b9b9b9;
+      font-size: 20px;
+      background: #2d7560;
+      border-radius: 3px;
+      cursor: pointer; }
+  .game .match {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 50px;
+    transition: opacity 1.5s 0.5s; }
+    .game .match .winner {
+      text-align: center;
+      font-size: 50px; }
+    .game .match .hands {
+      display: flex;
+      align-items: center;
+      justify-content: space-around; }
+      .game .match .hands .player-hand {
+        transform: rotateY(180deg); }
+    .game .match .options {
+      margin-top: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around; }
+      .game .match .options button {
+        width: 150px;
+        height: 50px;
+        background: none;
+        border: none;
+        color: #b9b9b9;
+        font-size: 20px;
+        background: #2d7560;
+        border-radius: 3px;
+        cursor: pointer; }
+
+@keyframes shakePlayer {
+  0% {
+    transform: rotateY(180deg) translateY(0px); }
+  15% {
+    transform: rotateY(180deg) translateY(-50px); }
+  25% {
+    transform: rotateY(180deg) translateY(0px); }
+  35% {
+    transform: rotateY(180deg) translateY(-50px); }
+  50% {
+    transform: rotateY(180deg) translateY(0px); }
+  65% {
+    transform: rotateY(180deg) translateY(-50px); }
+  75% {
+    transform: rotateY(180deg) translateY(0px); }
+  85% {
+    transform: rotateY(180deg) translateY(-50px); }
+  100% {
+    transform: rotateY(180deg) translateY(0px); } }
+
+@keyframes shakeComputer {
+  0% {
+    transform: translateY(0px); }
+  15% {
+    transform: translateY(-50px); }
+  25% {
+    transform: translateY(0px); }
+  35% {
+    transform: translateY(-50px); }
+  50% {
+    transform: translateY(0px); }
+  65% {
+    transform: translateY(-50px); }
+  75% {
+    transform: translateY(0px); }
+  85% {
+    transform: translateY(-50px); }
+  100% {
+    transform: translateY(0px); } }
