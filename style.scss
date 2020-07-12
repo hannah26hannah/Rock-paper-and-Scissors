@@ -99,6 +99,19 @@
        
     }
    
+    .language {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        
+        @include flex-box;
+        flex-direction: column;
+        
+        button {
+        @include button-style;
+        margin: 5px
+    }
+    }
 @keyframes shakePlayer {
     0% {
         transform: rotateY(180deg) translateY(0px);

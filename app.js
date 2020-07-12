@@ -1,11 +1,44 @@
 const game = () => {
     let pScore = 0;
     let cScore = 0;
+    const playBtn = document.querySelector('.intro button');
+    const winner = document.querySelector('.winner');
+
+    // change to korean
+    const setLang = () => {
+        // const setLangBtn = document.querySelector('.language .lang');
+        // create element for language set buttons
+        const krBtn = document.querySelector('.language .ko');
+        const enBtn = document.querySelector('.language .en');
+        // const jpBtn = document.querySelector('.language .jp');
+        // const cnBtn = document.querySelector('.language .cn');
+
+        const namePlayer = document.querySelector('.player-score h2');
+        const nameComputer = document.querySelector('.computer-score h2');
+        const nameIntro = document.querySelector('.intro h1');
+        const rockBtn = document.querySelector('.rock');
+        const paperBtn = document.querySelector('.paper');
+        const scissorsBtn = document.querySelector('.scissors');
+        
+        krBtn.addEventListener('click', () => {
+            namePlayer.textContent = '플레이어';
+            nameComputer.textContent = '컴퓨터';
+            
+            nameIntro.textContent = '가위 바위 보';
+            playBtn.textContent = '게임 시작하기';
+            winner.textContent = '아래에서 한 가지를 고르세요';
+            scissorsBtn.textContent = '가위';
+            rockBtn.textContent = '바위';
+            paperBtn.textContent = '보';
+        })
+    };
+
     
+
     // start the game 
     const startGame = () => {
-        // 전역변수로 만들 필요 없는 건 컴팩트하게 필요한 함수에 넣어주기
-        const playBtn = document.querySelector('.intro button');
+        
+        
         const introScreen = document.querySelector('.intro');
         const matchScreen = document.querySelector('.match');
         
@@ -46,11 +79,11 @@ const game = () => {
                 // Update Images
                 playerHand.src = `./assets/${this.textContent}.png`;
                 computerHand.src = `./assets/${computerChoice}.png`;
-                }, 2000)
+                }, 1500)
 
                 // animation
-                playerHand.style.animation = 'shakePlayer 2s ease';
-                computerHand.style.animation = 'shakeComputer 2s ease';
+                playerHand.style.animation = 'shakePlayer 1.5s ease';
+                computerHand.style.animation = 'shakeComputer 1.5s ease';
             });
         })
     };
@@ -64,7 +97,7 @@ const game = () => {
     // comparision 
     const compareHands = (playerChoice, computerChoice) => {
         // Update text
-        const winner = document.querySelector('.winner');
+        
         // checking for a tie
         if(playerChoice === computerChoice) {
             winner.textContent = 'It is a tie';
@@ -117,9 +150,10 @@ const game = () => {
     // call all the inner function 
     startGame();
     playMatch();
-    // updateScore();
+    setLang();
     
 };
+
 
 // start game function
 game();

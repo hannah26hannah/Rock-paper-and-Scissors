@@ -78,6 +78,26 @@
         border-radius: 3px;
         cursor: pointer; }
 
+.language {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column; }
+  .language button {
+    width: 150px;
+    height: 50px;
+    background: none;
+    border: none;
+    color: #b9b9b9;
+    font-size: 20px;
+    background: #2d7560;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 5px; }
+
 @keyframes shakePlayer {
   0% {
     transform: rotateY(180deg) translateY(0px); }
